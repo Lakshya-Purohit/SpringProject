@@ -38,7 +38,7 @@ public class JournalEntryControllerV2 {
     }
 
     @PutMapping("/id/{id}")
-    //this is a put methond that updates the exisitng entries`T
+    //this is a put methond that updates the w
     public JournalEntry updateJournalEntry(@PathVariable ObjectId id,@RequestBody JournalEntry newEntries){
         JournalEntry old = journalEntryService.findById(id).orElse(null);
         if(old!=null){
