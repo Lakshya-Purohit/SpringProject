@@ -38,11 +38,10 @@ public class JournalEntryControllerV2 {
     }
 
     @PutMapping("/id/{id}")
-    //this is a put methond that updates the w
     public JournalEntry updateJournalEntry(@PathVariable ObjectId id,@RequestBody JournalEntry newEntries){
         JournalEntry old = journalEntryService.findById(id).orElse(null);
         if(old!=null){
-            old.setTitle(newEntries.getTitle()!=null&& !newEntries.getTitle().equals("")? newEntries.getTitle() : old.getTitle());
+            old.setTitle(newEntries.getTitle()!=null && !newEntries.getTitle().equals("")? newEntries.getTitle() : old.getTitle());
             old.setContent(newEntries.getContent()!=null&& !newEntries.getContent().equals("")? newEntries.getContent() : old.getContent());
         }
         journalEntryService.saveEntry(old);
