@@ -27,7 +27,8 @@ public class JournalEntryService {
         return journalEntryRepository.findById(id);
     }
 
-    public void deletebById(ObjectId id){
+    public boolean deleteById(ObjectId id){
         journalEntryRepository.deleteById(id);
+        return false;
     }
 }
